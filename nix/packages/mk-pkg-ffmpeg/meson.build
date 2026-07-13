@@ -46,7 +46,7 @@ common_options = [
     '--enable-network',
     '--enable-pthreads',
     '--enable-pic',
-    '--enable-mbedtls', # tls support (mbedtls)
+    '--enable-securetransport', # Apple native TLS, hooks into iOS Keychain!
     '--enable-version3',
     '--enable-safe-bitstream-reader',
     '--enable-stripping',

@@ -68,7 +68,7 @@ pkgs.stdenvNoCC.mkDerivation {
     pkgs.pkg-config
   ];
   buildInputs =
-    [ mbedtls ]
+    [ ]
     ++ pkgs.lib.optionals (flavor == flavors.encodersgpl) [
       libvorbis
     ]
