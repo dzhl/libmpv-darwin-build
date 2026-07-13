@@ -83,7 +83,7 @@ jobs:
         if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/')
         with:
           draft: ${{ github.ref == 'refs/heads/main' }}
-          tag_name: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || 'vnext' }}
+          tag_name: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || format('build-{0}', github.run_number) }}
           fail_on_unmatched_files: true
           files: |
             result/*.tar.gz
