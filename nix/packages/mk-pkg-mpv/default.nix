@@ -75,9 +75,9 @@ pkgs.stdenvNoCC.mkDerivation {
     ++ pkgs.lib.optionals (variant == "video") [
       uchardet
       libass
-      pkgs.libplacebo
     ]
     ++ pkgs.lib.optionals (variant == "video" && os == "macos") [
+      pkgs.libplacebo
       pkgs.libbluray
     ];
   configurePhase = ''
@@ -207,7 +207,6 @@ pkgs.stdenvNoCC.mkDerivation {
       `# misc features`
       -Duchardet=enabled `# uchardet support`
       -Dzlib=enabled `# zlib`
-      -Dlibplacebo=enabled `# libplacebo support`
 
       `# video output features`
       -Dgl=enabled `# OpenGL context support`
@@ -224,6 +223,7 @@ pkgs.stdenvNoCC.mkDerivation {
 
     MACOS_VIDEO_OPTIONS=(
       `# misc features`
+      -Dlibplacebo=enabled `# libplacebo support`
       -Dlibbluray=enabled `# Bluray support`
 
       `# video output features`
